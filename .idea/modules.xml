@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dicodingsubmission2made.iml" filepath="$PROJECT_DIR$/.idea/modules/dicodingsubmission2made.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/dicodingsubmission2made.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/dicodingsubmission2made.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/dicodingsubmission2made.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/dicodingsubmission2made.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favorite/dicodingsubmission2made.favorite.iml" filepath="$PROJECT_DIR$/.idea/modules/favorite/dicodingsubmission2made.favorite.iml" />
+    </modules>
+  </component>
+</project>

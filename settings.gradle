@@ -1,0 +1,5 @@
+rootProject.name = "dicodingsubmission2made"
+include ':app'
+include ':core'
+include ':core'
+include ':favorite'

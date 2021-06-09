@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.dagger:dagger-android-support:2.17@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/f0be38be80d3f47dafd3160c6a8c99ff/dagger-android-support-2.17/res" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/9b3cb3977d307cbe4f1daad3d28007cd/dagger-android-support-2.17/res" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/b60a0fc5658098a4650d13f39f1e853d/jetified-dagger-android-support-2.17/res" />
+      <root url="jar://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/c391d496c077d47db80f37c0b5b0ce04/jetified-dagger-android-support-2.17/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/c391d496c077d47db80f37c0b5b0ce04/jetified-dagger-android-support-2.17/res" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/c391d496c077d47db80f37c0b5b0ce04/jetified-dagger-android-support-2.17/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/413477f1e39572a65c6f80eeeeace34b/jetified-dagger-android-support-2.17/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/413477f1e39572a65c6f80eeeeace34b/jetified-dagger-android-support-2.17/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../.gradle/caches/transforms-2/files-2.1/413477f1e39572a65c6f80eeeeace34b/jetified-dagger-android-support-2.17/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger-android-support/2.17/58ba62a8561e275be82b3cb9f0f17268fb922e69/dagger-android-support-2.17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger-android-support/2.17/daa6c5bef280e23288dfd864047b77d88edabd1e/dagger-android-support-2.17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
