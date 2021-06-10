@@ -9,7 +9,7 @@
     <string name="film_genre">Genre</string>
     <string name="film_duration">Duration</string>
     <string name="film_overview">Overview</string>
-    <string name="data_load_failed">Failed to load data</string>
     <string name="title_favorite">Favorite</string>
+    <string name="rv_item_content_desc">Item image</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

@@ -16,7 +16,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="16dp"
-            tools:src="@android:color/darker_gray" />
+            tools:src="@android:color/darker_gray"
+            android:contentDescription="@string/rv_item_content_desc" />
 
         <TextView
             android:id="@+id/tv_item_name"
