@@ -82,15 +82,16 @@
     <TextView
         android:id="@+id/film_overview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
-        android:maxWidth="336dp"
-        android:maxHeight="360dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginVertical="12dp"
         android:justificationMode="inter_word"
+        android:scrollbars="vertical"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/favorite_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/overview_label">
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@id/overview_label" />
 
     <ToggleButton
         android:id="@+id/favorite_btn"

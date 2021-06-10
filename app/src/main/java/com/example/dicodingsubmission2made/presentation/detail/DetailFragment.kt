@@ -1,6 +1,7 @@
 package com.example.dicodingsubmission2made.presentation.detail
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.dicodingsubmission2made.core.injection.domain.model.Film
 import com.example.dicodingsubmission2made.databinding.DetailFragmentBinding
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class DetailFragment : Fragment() {
 
@@ -33,6 +35,7 @@ class DetailFragment : Fragment() {
                         IMAGE_BASE_URL+(arguments?.getParcelable<Film>(
                         Film.FILM)!!).poster)
                     .into(binding?.filmPoster!!)
+                binding?.filmOverview?.setMovementMethod(ScrollingMovementMethod())
                 binding?.filmOverview?.text = it.overview
                 binding?.favoriteBtn?.isChecked = viewModel.isFavorite(filmData.film_id!!)
             }
@@ -49,7 +52,7 @@ class DetailFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = DetailFragmentBinding.inflate(inflater, container, false)
         return binding?.root
