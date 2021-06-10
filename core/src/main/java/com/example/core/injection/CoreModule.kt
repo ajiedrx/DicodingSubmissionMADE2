@@ -7,6 +7,8 @@ import com.example.dicodingsubmission2made.core.injection.data.local.LocalDataSo
 import com.example.dicodingsubmission2made.core.injection.data.remote.RemoteDataSource
 import com.example.dicodingsubmission2made.core.injection.data.remote.api.ApiService
 import com.example.dicodingsubmission2made.core.injection.domain.repository.IFilmRepository
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -15,10 +17,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val databaseModule = module {
     factory { get<AppDatabase>().getDao() }
+
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("dicoding".toCharArray())
+        val factory = SupportFactory(passphrase)
          Room.databaseBuilder(androidContext(), AppDatabase::class.java, "appdb")
             .allowMainThreadQueries()
-            .fallbackToDestructiveMigration()
+            .fallbackToDestructiveMigration().openHelperFactory(factory)
             .build()
     }
 }
