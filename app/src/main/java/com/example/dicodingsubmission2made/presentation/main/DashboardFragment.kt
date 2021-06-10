@@ -17,6 +17,7 @@ import java.lang.Exception
 class DashboardFragment : Fragment() {
 
     private var binding: FilmTabsFragmentBinding? = null
+    private var mediator : TabLayoutMediator? = null
 
     companion object {
         val TAB_TITLES = arrayListOf(
@@ -72,9 +73,10 @@ class DashboardFragment : Fragment() {
         val tabs: TabLayout? = binding?.tabs
         if (tabs != null) {
             if (viewPager != null) {
-                TabLayoutMediator(tabs, viewPager) { tab, position ->
+                mediator = TabLayoutMediator(tabs, viewPager) { tab, position ->
                     tab.text = TAB_TITLES[position]
-                }.attach()
+                }
+                mediator?.attach()
             }
         }
     }
@@ -82,6 +84,8 @@ class DashboardFragment : Fragment() {
     override fun onDestroyView() {
         val viewPager: ViewPager2? = binding?.ffViewpager
         viewPager?.adapter = null
+        mediator?.detach()
+        mediator = null
         binding = null
         super.onDestroyView()
     }

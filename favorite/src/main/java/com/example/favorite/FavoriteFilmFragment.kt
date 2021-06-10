@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dicodingsubmission2made.databinding.FilmTabsFragmentBinding
-import com.example.dicodingsubmission2made.presentation.adapters.SectionPagerAdapter
 import com.example.favorite.favorite.favoriteModule
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -15,7 +14,7 @@ import org.koin.core.context.loadKoinModules
 
 class FavoriteFilmFragment : Fragment() {
     private var binding: FilmTabsFragmentBinding? = null
-
+    private var mediator : TabLayoutMediator? = null
     companion object {
         val TAB_TITLES = arrayListOf(
             "Movies",
@@ -46,9 +45,10 @@ class FavoriteFilmFragment : Fragment() {
         val tabs: TabLayout? = binding?.tabs
         if (tabs != null) {
             if (viewPager != null) {
-                TabLayoutMediator(tabs, viewPager) { tab, position ->
+                mediator = TabLayoutMediator(tabs, viewPager) { tab, position ->
                     tab.text = TAB_TITLES[position]
-                }.attach()
+                }
+                mediator?.attach()
             }
         }
     }
@@ -56,6 +56,8 @@ class FavoriteFilmFragment : Fragment() {
     override fun onDestroyView() {
         val viewPager: ViewPager2? = binding?.ffViewpager
         viewPager?.adapter = null
+        mediator?.detach()
+        mediator = null
         binding = null
         super.onDestroyView()
     }
