@@ -9,6 +9,8 @@ import com.example.dicodingsubmission2made.core.injection.data.remote.api.ApiSer
 import com.example.dicodingsubmission2made.core.injection.domain.repository.IFilmRepository
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
+import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -31,8 +33,13 @@ val databaseModule = module {
 private val baseUrl = "https://api.themoviedb.org/"
 val networkModule = module {
     single {
+        val hostname = "api.themoviedb.org"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/+vqZVAzTqUP8BGkfl88yU7SQ3C8J2uNEa55B7RZjEg0=")
+            .build()
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
+            .client(OkHttpClient.Builder().certificatePinner(certificatePinner).build())
             .addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(
                 RxJava2CallAdapterFactory.create())
             .build()
