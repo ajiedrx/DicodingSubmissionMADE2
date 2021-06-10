@@ -53,4 +53,10 @@ class MovieListFragment : Fragment(), IListFragment {
             }
         })
     }
+
+    override fun onDestroyView() {
+        binding?.rvFilms?.adapter = null
+        binding = null
+        super.onDestroyView()
+    }
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dicodingsubmission2made.databinding.FilmTabsFragmentBinding
+import com.example.dicodingsubmission2made.presentation.adapters.SectionPagerAdapter
 import com.example.favorite.favorite.favoriteModule
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -37,7 +38,9 @@ class FavoriteFilmFragment : Fragment() {
     }
 
     private fun initSectionPager() {
-        val sectionPagerAdapter = FSectionPagerAdapter(this)
+        val fragmentManager = childFragmentManager
+        val lifecycle = viewLifecycleOwner.lifecycle
+        val sectionPagerAdapter = FSectionPagerAdapter(fragmentManager, lifecycle)
         val viewPager: ViewPager2? = binding?.ffViewpager
         viewPager?.adapter = sectionPagerAdapter
         val tabs: TabLayout? = binding?.tabs
@@ -50,4 +53,10 @@ class FavoriteFilmFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        val viewPager: ViewPager2? = binding?.ffViewpager
+        viewPager?.adapter = null
+        binding = null
+        super.onDestroyView()
+    }
 }

@@ -1,12 +1,17 @@
 package com.example.favorite
 
+import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.favorite.movie.FavoriteMovieListFragment
 import com.example.favorite.tvshow.FavoriteTvShowListFragment
 
 
-class FSectionPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class FSectionPagerAdapter(@NonNull fragmentManager : FragmentManager,
+                           @NonNull lifecycle : Lifecycle
+) : FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
         return 2
     }

@@ -64,7 +64,9 @@ class DashboardFragment : Fragment() {
     }
 
     private fun initSectionPager() {
-        val sectionPagerAdapter = SectionPagerAdapter(this)
+        val fragmentManager = childFragmentManager
+        val lifecycle = viewLifecycleOwner.lifecycle
+        val sectionPagerAdapter = SectionPagerAdapter(fragmentManager, lifecycle)
         val viewPager: ViewPager2? = binding?.ffViewpager
         viewPager?.adapter = sectionPagerAdapter
         val tabs: TabLayout? = binding?.tabs
@@ -75,6 +77,13 @@ class DashboardFragment : Fragment() {
                 }.attach()
             }
         }
+    }
+
+    override fun onDestroyView() {
+        val viewPager: ViewPager2? = binding?.ffViewpager
+        viewPager?.adapter = null
+        binding = null
+        super.onDestroyView()
     }
 
 }
